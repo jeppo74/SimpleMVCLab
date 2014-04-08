@@ -1,0 +1,10 @@
+<script> alert('you have security issues') </script>
+
+\x3cscript\x3e alert('you have security issues') \x3c/script\x3e
+
+
+<img src="http://i.imgur.com/SErVs5H.png" />
+
+\x3cimg src="http://i.imgur.com/SErVs5H.png" /\x3e
+
+<img src="/home/about" />

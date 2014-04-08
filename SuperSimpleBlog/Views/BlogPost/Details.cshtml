@@ -1,0 +1,45 @@
+﻿@model SuperSimpleBlog.Models.BlogPost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BlogPost</legend>
+
+    <div class="display-label">
+       @Html.DisplayNameFor(model => model.Subject)
+        
+      
+    </div>
+    <div class="display-field">
+        @*Intentional security flaw for XSS experiments.*@
+        @*@Html.DisplayFor(model => model.Subject)*@
+        @*@Html.Raw(Model.Subject)*@
+        @*Corny change*@
+
+
+        @*This is more safe. With correct encoding.*@
+        @Html.DisplayFor(model => model.Subject)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BodyText)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BodyText)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.UserName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
